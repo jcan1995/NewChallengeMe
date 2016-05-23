@@ -10,6 +10,9 @@ import android.view.View;
 
 import com.mycompany.challengeme.Fragments.AddChallenge;
 
+/**
+ *  WASSUP MOTHER FUCKERS 
+ */
 public class MainActivity extends AppCompatActivity {
 
     TabLayout mTabLayout;
