@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="#ffffff"
+              android:paddingTop="16dp"
+              android:paddingBottom="16dp"
+              android:paddingLeft="16dp"
+              android:paddingRight="16dp"
+            >
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Take a photo to begin challenge"
+        android:id="@+id/tvDisplayMessage"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"/>
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:id="@+id/bStartImage"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:text="Start"
+        android:layout_gravity="center_vertical"
+        android:layout_marginTop="32dp"
+        android:layout_below="@+id/tvDisplayMessage"
+        android:layout_alignLeft="@+id/tvDisplayMessage"
+        android:layout_alignStart="@+id/tvDisplayMessage"/>
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        android:id="@+id/bReturn"
+        android:layout_alignTop="@+id/bStartImage"
+        android:layout_alignRight="@+id/tvDisplayMessage"
+        android:layout_alignEnd="@+id/tvDisplayMessage"/>
+
+    <ImageView
+        android:layout_width="250dp"
+        android:layout_height="200dp"
+        android:id="@+id/imageView"
+        android:layout_gravity="center_horizontal"
+        android:layout_centerVertical="true"
+        android:layout_alignLeft="@+id/bStartImage"
+        android:layout_alignStart="@+id/bStartImage"/>
+
+<Button
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Save"
+    android:id="@+id/bSave"
+    android:layout_marginBottom="31dp"
+    android:layout_alignParentBottom="true"
+    android:layout_centerHorizontal="true"/>
+
+</RelativeLayout>
+
+
+
+</LinearLayout>
