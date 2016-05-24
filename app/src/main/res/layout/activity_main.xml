@@ -4,6 +4,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/viewB"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     >
 
@@ -15,7 +16,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:background="#0dffbe"
-       />
+        />
 
 
     <android.support.v4.view.ViewPager
@@ -38,14 +39,14 @@
         android:orientation="horizontal"
         android:id="@+id/viewA"
         >
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/bAddChallenge"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:clickable="true"
-        app:layout_anchor="@id/viewA"
-        app:layout_anchorGravity="bottom|right|end"
-        android:layout_gravity="bottom"/>
-</LinearLayout>
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/bAddChallenge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:clickable="true"
+            app:layout_anchor="@id/viewA"
+            app:layout_anchorGravity="bottom|right|end"
+            android:layout_gravity="bottom"/>
+    </LinearLayout>
 </RelativeLayout>

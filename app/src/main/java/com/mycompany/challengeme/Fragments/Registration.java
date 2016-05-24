@@ -9,6 +9,10 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.mycompany.challengeme.R;
+import com.mycompany.challengeme.Singleton;
+import com.mycompany.challengeme.User;
+
+import java.util.ArrayList;
 
 /**
  * Created by joshua on 5/23/2016.
@@ -21,10 +25,32 @@ public class Registration extends Fragment {
     EditText etPhoneNumber;
     Button bSubmit;
 
+
+    private ArrayList<User> mUserArrayList;
+
+
+    private void Register(){
+
+        String First;
+        String Last;
+        String Phone;
+
+        First = etFirstName.getText().toString();
+        Last = etLastName.getText().toString();
+        Phone = etPhoneNumber.getText().toString();
+
+        User user = new User(First,Last,Phone);
+        mUserArrayList.add(user);
+
+
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup parent, Bundle savedInstanceState){
-
         View v = inflater.inflate(R.layout.fragment_register,parent,false);
+
+        mUserArrayList = Singleton.get(getActivity()).getUsers();
+
 
         etFirstName = (EditText)v.findViewById(R.id.etFirst);
         etLastName = (EditText)v.findViewById(R.id.etLast);
@@ -34,7 +60,8 @@ public class Registration extends Fragment {
         bSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Register();
+                //Db shtuff should go in here(I think). For now...static.
                 Login loginFrag = new Login();
                 getFragmentManager()
                         .beginTransaction()
