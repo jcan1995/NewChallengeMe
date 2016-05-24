@@ -10,6 +10,7 @@ import java.util.ArrayList;
 public class Singleton {
 
     private ArrayList<ChallengeSet> mChallenges;
+    private ArrayList<User> mUsers;
 
     private static Singleton sSingleton = null;
 
@@ -17,12 +18,17 @@ public class Singleton {
 
     private Singleton(Context appContext){
         mAppContext = appContext;
+
         mChallenges = new ArrayList<ChallengeSet>();
+        mUsers = new ArrayList<User>();
 
     }
 
     public ArrayList<ChallengeSet> getChallenges(){
         return mChallenges;
+    }
+    public ArrayList<User> getUsers(){
+        return mUsers;
     }
 
 

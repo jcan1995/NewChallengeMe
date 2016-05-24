@@ -6,57 +6,12 @@
               android:background="#000000"
 >
 
-    <RelativeLayout
+    <FrameLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:id="@+id/fContainer"
+        />
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Login"
-            android:id="@+id/bLogin"
-            android:layout_gravity="center_horizontal"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="133dp"/>
-
-        <EditText
-            android:background="@color/colorWhite"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:inputType="textEmailAddress"
-            android:ems="10"
-            android:id="@+id/editText"
-            android:text="Email"
-            android:layout_above="@+id/etPassWord"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="41dp"/>
-
-        <EditText
-            android:background="@color/colorWhite"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:inputType="textPassword"
-            android:ems="10"
-            android:id="@+id/etPassWord"
-            android:text="PassWord"
-            android:layout_above="@+id/bLogin"
-            android:layout_alignLeft="@+id/editText"
-            android:layout_alignStart="@+id/editText"
-            android:layout_marginBottom="29dp"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="#ffffff"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Go Beyond Your Potential"
-            android:id="@+id/tvChallengeMe"
-            android:layout_above="@+id/editText"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="36dp"/>
-
-
-    </RelativeLayout>
 
 </LinearLayout>

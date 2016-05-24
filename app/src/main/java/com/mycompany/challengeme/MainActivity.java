@@ -10,6 +10,8 @@ import android.view.View;
 
 import com.mycompany.challengeme.Fragments.AddChallenge;
 
+//This is a test comment
+
 public class MainActivity extends AppCompatActivity {
 
     TabLayout mTabLayout;
