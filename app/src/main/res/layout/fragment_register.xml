@@ -3,21 +3,43 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               android:background="#ffffff"
-
-    >
-<RelativeLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <Button
+              android:orientation="vertical"
+              android:weightSum="1">
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/bSubmit"
-        android:text="Submit"
-        android:layout_gravity="center_horizontal"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="133dp"
+        android:paddingTop="16dp"
+        android:paddingLeft="16dp"
+        android:text="First Name"
+        android:id="@+id/tvFirst"
         />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:id="@+id/etFirst"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="16dp"
+        android:paddingLeft="16dp"
+        android:text="Last Name"
+        android:id="@+id/tvLast"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:id="@+id/etLast"
+        android:layout_above="@id/tvLast"
+        />
+
 
     <TextView
         android:layout_width="wrap_content"
@@ -28,41 +50,7 @@
         android:id="@+id/tvPhoneNumber"
         android:layout_above="@id/etPhoneNumber"
         />
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingLeft="16dp"
-        android:paddingRight="16dp"
-        android:id="@+id/etLast"
-        android:layout_above="@id/tvPhoneNumber"
-        />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingTop="16dp"
-        android:paddingLeft="16dp"
-        android:text="Last Name"
-        android:id="@+id/tvLast"
-        android:layout_above="@id/etLast"
-        />
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingLeft="16dp"
-        android:paddingRight="16dp"
-        android:id="@+id/etFirst"
-        android:layout_above="@id/tvLast"
-        />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingTop="16dp"
-        android:paddingLeft="16dp"
-        android:text="First Name"
-        android:id="@+id/tvFirst"
-        android:layout_above="@id/etFirst"
-        />
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -73,11 +61,52 @@
         android:layout_above="@id/bSubmit"
         />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="16dp"
+        android:paddingLeft="16dp"
+        android:text="Email"
+        android:id="@+id/tvEmail"
+        />
 
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:inputType="textEmailAddress"
+        android:id="@+id/etEmail"
+        />
 
-</RelativeLayout>
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:id="@+id/etPassword"
+        />
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:hint="Confirm Password"
+        android:inputType="textPassword"
+        android:id="@+id/etConfirmPass"
+        />
 
-
-
+    <Button
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/bSubmit"
+        android:text="Submit"
+        android:layout_gravity="center_horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="153dp"
+        android:layout_weight="0.21"/>
 
 </LinearLayout>

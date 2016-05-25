@@ -27,6 +27,11 @@ public class Registration extends Fragment {
     private EditText etFirstName;
     private EditText etLastName;
     private EditText etPhoneNumber;
+    private EditText etEmail;
+
+    private EditText etPassword;
+    private EditText etConfirmPass;
+
     private Button bSubmit;
 
     @Override
@@ -38,9 +43,13 @@ public class Registration extends Fragment {
         }
         final Firebase userRef = fbRef.child("users");
 
+        etPassword = (EditText)v.findViewById(R.id.etPassword);
+        etEmail = (EditText)v.findViewById(R.id.etEmail);
         etFirstName = (EditText) v.findViewById(R.id.etFirst);
         etLastName = (EditText) v.findViewById(R.id.etLast);
         etPhoneNumber = (EditText) v.findViewById(R.id.etPhoneNumber);
+        etConfirmPass = (EditText) v.findViewById(R.id.etConfirmPass);
+
         bSubmit = (Button) v.findViewById(R.id.bSubmit);
         bSubmit.setOnClickListener(new View.OnClickListener() {
 
@@ -50,14 +59,59 @@ public class Registration extends Fragment {
                 String First;
                 String Last;
                 String Phone;
+                String Email;
+                String Password;
+                String ConfirmPass;
 
                 First = etFirstName.getText().toString();
                 Last = etLastName.getText().toString();
                 Phone = etPhoneNumber.getText().toString();
+                Email = etEmail.getText().toString();
 
-                if(!First.equals("") || !Last.equals("") || !Phone.equals("")) {
+                Password = etPassword.getText().toString();
+                ConfirmPass = etConfirmPass.getText().toString();
+/*
+                if(!Password.equals(ConfirmPass)){
 
-                    User user = new User(First,Last,Phone);
+                    Toast toast = Toast.makeText(getActivity(), "Need first name.", Toast.LENGTH_LONG);
+                    toast.show();
+
+                    Registration regisFrag = new Registration();
+                    getFragmentManager()
+                            .beginTransaction()
+                            .replace(R.id.fContainer, regisFrag)
+                            .commit();
+
+
+                }
+*/
+                if(First.equals("") || Last.equals("") || Phone.equals("")|| Email.equals("")) {
+
+                    if(First.equals("")) {
+                        Toast toast = Toast.makeText(getActivity(), "Need first name.", Toast.LENGTH_LONG);
+                        toast.show();
+                    }
+
+                    else if(Last.equals("")){
+                        Toast toast = Toast.makeText(getActivity(),"Need last name",Toast.LENGTH_LONG);
+                        toast.show();
+                    }
+                    else if(Email.equals("")){
+                        Toast toast = Toast.makeText(getActivity(),"Need email",Toast.LENGTH_LONG);
+                        toast.show();
+                    }
+
+                    else if(Phone.equals("")){
+                        Toast toast = Toast.makeText(getActivity(),"Need phone number",Toast.LENGTH_LONG);
+                        toast.show();
+                    }
+
+                    //Do some sort of alert to tell user to input all fields.
+                }
+
+                else {
+
+                    User user = new User(First,Last,Phone,Email,Password);
                     Map<String, User> users = new HashMap<>();
                     users.put(Phone,user);
 
@@ -70,18 +124,21 @@ public class Registration extends Fragment {
                     etFirstName.setText("");
                     etLastName.setText("");
                     etPhoneNumber.setText("");
-                } else {
-                    //Do some sort of alert to tell user to input all fields.
+                    etEmail.setText("");
+
+                    Toast toast = Toast.makeText(getActivity(),"Registration Successful!",Toast.LENGTH_LONG);
+                    toast.show();
+
+                    Login loginFrag = new Login();
+                    getFragmentManager()
+                            .beginTransaction()
+                            .replace(R.id.fContainer, loginFrag)
+                            .commit();
+
                 }
 
-                Toast toast = Toast.makeText(getActivity(),"Registration Successful!",Toast.LENGTH_LONG);
-                toast.show();
 
-                Login loginFrag = new Login();
-                getFragmentManager()
-                        .beginTransaction()
-                        .replace(R.id.fContainer, loginFrag)
-                        .commit();
+
             }
         });
         return v;

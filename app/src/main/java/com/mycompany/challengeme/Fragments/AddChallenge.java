@@ -56,20 +56,12 @@ public class AddChallenge extends Fragment {
                 ChallengeSet challenge = new ChallengeSet(challengeDes,challengeTitle);
                 fbRef1.push().setValue(challenge);
 
-               // String title = "Title"; //added
-              //  Bundle args = new Bundle(); //added
-              //  args.putString(title, challengeTitle); // added
+
                 Fragment newFragment = new CameraAdd();
-               // newFragment.setArguments(args);// added
                 FragmentManager fm = getFragmentManager();
                 fm.beginTransaction()
                         .replace(R.id.fFragmentContainer, newFragment)
                         .commit();
-
-
-
-
-              //  mChallengesArrayList.add(challenge);
                 //change to add photo challenge here.
 
 

@@ -26,19 +26,17 @@
             android:layout_marginBottom="81dp"/>
 
         <EditText
-            android:background="@color/colorWhite"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:inputType="textEmailAddress"
             android:ems="10"
             android:id="@+id/etPhoneNumber"
-            android:hint="Phone Number"
+            android:hint="Email"
             android:layout_above="@+id/etPassWord"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="41dp"/>
 
         <EditText
-            android:background="@color/colorWhite"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:inputType="textPassword"
@@ -53,7 +51,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="#ffffff"
+            android:textColor="@color/colorPrimary"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Go Beyond Your Potential"
             android:id="@+id/tvChallengeMe"
