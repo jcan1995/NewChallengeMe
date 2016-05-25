@@ -56,13 +56,9 @@ public class Registration extends Fragment {
 
                 if(!First.equals("") || !Last.equals("") || !Phone.equals("")) {
 
-                    Map<String, String> userMap = new HashMap<>();
-                    userMap.put("First Name", First);
-                    userMap.put("Last Name", Last);
-                    userMap.put("Phone Number", Phone);
-
-                    Map<String, Map<String, String>> users = new HashMap<>();
-                    users.put(Phone, userMap);
+                    User user = new User(First,Last,Phone);
+                    Map<String, User> users = new HashMap<>();
+                    users.put(Phone,user);
 
                     if (userRef == null) {
                         userRef.setValue(users);
