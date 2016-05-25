@@ -3,6 +3,7 @@ package com.mycompany.challengeme;
 import android.content.Context;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  * Created by joshua on 5/22/2016.
@@ -10,7 +11,9 @@ import java.util.ArrayList;
 public class Singleton {
 
     private ArrayList<ChallengeSet> mChallenges;
-    private ArrayList<User> mUsers;
+  //  private ArrayList<User> mUsers;
+
+    private HashMap<String, User> mUsers;
 
     private static Singleton sSingleton = null;
 
@@ -20,14 +23,19 @@ public class Singleton {
         mAppContext = appContext;
 
         mChallenges = new ArrayList<ChallengeSet>();
-        mUsers = new ArrayList<User>();
+       // mUsers = new ArrayList<User>();
+        mUsers = new HashMap<String, User>();
 
     }
 
     public ArrayList<ChallengeSet> getChallenges(){
         return mChallenges;
     }
-    public ArrayList<User> getUsers(){
+ //   public ArrayList<User> getUsers(){
+   //     return mUsers;
+  //  }
+
+    public HashMap<String, User> getUsers(){
         return mUsers;
     }
 
