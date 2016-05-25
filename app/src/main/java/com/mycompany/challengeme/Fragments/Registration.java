@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.firebase.client.Firebase;
 import com.mycompany.challengeme.R;
@@ -72,6 +73,9 @@ public class Registration extends Fragment {
                 } else {
                     //Do some sort of alert to tell user to input all fields.
                 }
+
+                Toast toast = Toast.makeText(getActivity(),"Registration Successful!",Toast.LENGTH_LONG);
+                toast.show();
 
                 Login loginFrag = new Login();
                 getFragmentManager()
