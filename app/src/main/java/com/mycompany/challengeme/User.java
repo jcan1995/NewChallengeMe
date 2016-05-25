@@ -4,11 +4,11 @@ package com.mycompany.challengeme;
  * Created by joshua on 5/23/2016.
  */
 public class User {
+    private String FirstName;
+    private String LastName;
+    private String PhoneNumber;
 
-    String FirstName;
-    String LastName;
-    String PhoneNumber;
-
+    public User(){}
     public User(String F, String L, String P){
 
         FirstName = F;

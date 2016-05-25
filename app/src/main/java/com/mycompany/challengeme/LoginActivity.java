@@ -11,15 +11,13 @@ import com.mycompany.challengeme.Fragments.Login;
 
 public class LoginActivity extends FragmentActivity {
 
-   // Button bLogin;
-   // Button bRegister;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-// Check that the activity is using the layout version with the fragment_container FrameLayout
+
+        // Check that the activity is using the layout version with the fragment_container FrameLayout
         if(findViewById(R.id.fContainer) != null) {
             // if we are being restored from a previous state, then we dont need to do anything and should
             // return or else we could end up with overlapping fragments.

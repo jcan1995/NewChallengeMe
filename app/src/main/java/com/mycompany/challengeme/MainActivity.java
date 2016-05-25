@@ -4,25 +4,24 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.mycompany.challengeme.Fragments.AddChallenge;
 
-//This is a test comment
+public class MainActivity extends FragmentActivity {
 
-public class MainActivity extends AppCompatActivity {
+    private TabLayout mTabLayout;
+    private ViewPager mViewPager;
+    private FloatingActionButton bAddChallenge;
+    private Adapter mAdapter;
 
-    TabLayout mTabLayout;
-    ViewPager mViewPager;
-    FloatingActionButton bAddChallenge;
-
-    Adapter mAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         bAddChallenge = (FloatingActionButton) findViewById(R.id.bAddChallenge);
 
         mAdapter = new Adapter(getSupportFragmentManager());
@@ -63,10 +62,5 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-
-
-
-
-
 
 }

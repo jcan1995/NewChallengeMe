@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.firebase.client.Firebase;
 import com.mycompany.challengeme.R;
 import com.mycompany.challengeme.Singleton;
 import com.mycompany.challengeme.User;
@@ -19,15 +20,14 @@ import java.util.ArrayList;
  */
 public class Registration extends Fragment {
 
-
-    EditText etFirstName;
-    EditText etLastName;
-    EditText etPhoneNumber;
-    Button bSubmit;
-
-
+    private final String FIREBASE_URL="https://challengeme2.firebaseio.com/";
+    public Firebase fbRef1;
     private ArrayList<User> mUserArrayList;
 
+    private EditText etFirstName;
+    private EditText etLastName;
+    private EditText etPhoneNumber;
+    private  Button bSubmit;
 
     private void Register(){
 
@@ -39,16 +39,27 @@ public class Registration extends Fragment {
         Last = etLastName.getText().toString();
         Phone = etPhoneNumber.getText().toString();
 
-        User user = new User(First,Last,Phone);
-        mUserArrayList.add(user);
+        if(!First.equals("") || !Last.equals("") ||! Phone.equals("")) {
+            User user = new User(First, Last, Phone);
 
+            //Push into Firebase.
+            fbRef1.push().setValue(user);
+            etFirstName.setText("");
+            etLastName.setText("");
+            etPhoneNumber.setText("");
 
+        }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup parent, Bundle savedInstanceState){
         View v = inflater.inflate(R.layout.fragment_register,parent,false);
 
+        Firebase.setAndroidContext(getActivity());
+
+        if(fbRef1 == null) {
+            fbRef1 = new Firebase(FIREBASE_URL);
+        }
         mUserArrayList = Singleton.get(getActivity()).getUsers();
 
 
@@ -70,17 +81,9 @@ public class Registration extends Fragment {
 
 
 
-            }
-        });
-
-
-
+                }
+         });
         return v;
-
-
     }
-
-
-
 
 }
