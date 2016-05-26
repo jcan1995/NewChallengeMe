@@ -23,6 +23,7 @@ public class Registration extends Fragment {
 
     private final String FIREBASE_URL = "https://challengeme2.firebaseio.com/";
     private Firebase fbRef;
+
     private HashMap<String, User> mUsers;
     private EditText etFirstName;
     private EditText etLastName;
@@ -50,6 +51,11 @@ public class Registration extends Fragment {
         etPhoneNumber = (EditText) v.findViewById(R.id.etPhoneNumber);
         etConfirmPass = (EditText) v.findViewById(R.id.etConfirmPass);
 
+
+        ///////////////////////////////////////////////
+        //Check if user is connected to the internet.//
+        ///////////////////////////////////////////////
+
         bSubmit = (Button) v.findViewById(R.id.bSubmit);
         bSubmit.setOnClickListener(new View.OnClickListener() {
 
@@ -70,6 +76,16 @@ public class Registration extends Fragment {
 
                 Password = etPassword.getText().toString();
                 ConfirmPass = etConfirmPass.getText().toString();
+
+                ///////////////////////////////////////////////////////
+                //Check if password and confirm password fields match//
+                ///////////////////////////////////////////////////////
+
+
+                //////////////////////////////////////////
+                //Check if phone number is already taken//
+                //////////////////////////////////////////
+
 /*
                 if(!Password.equals(ConfirmPass)){
 
@@ -85,29 +101,27 @@ public class Registration extends Fragment {
 
                 }
 */
-                if(First.equals("") || Last.equals("") || Phone.equals("")|| Email.equals("")) {
 
-                    if(First.equals("")) {
-                        Toast toast = Toast.makeText(getActivity(), "Need first name.", Toast.LENGTH_LONG);
-                        toast.show();
+
+                    if (First.equals("") || Last.equals("") || Phone.equals("") || Email.equals("")) {
+
+                        if (First.equals("")) {
+                            Toast toast = Toast.makeText(getActivity(), "Need first name.", Toast.LENGTH_LONG);
+                            toast.show();
+                        } else if (Last.equals("")) {
+                            Toast toast = Toast.makeText(getActivity(), "Need last name", Toast.LENGTH_LONG);
+                            toast.show();
+                        } else if (Email.equals("")) {
+                            Toast toast = Toast.makeText(getActivity(), "Need email", Toast.LENGTH_LONG);
+                            toast.show();
+                        } else if (Phone.equals("")) {
+                            Toast toast = Toast.makeText(getActivity(), "Need phone number", Toast.LENGTH_LONG);
+                            toast.show();
+                        }
+
+                        //Do some sort of alert to tell user to input all fields.
                     }
 
-                    else if(Last.equals("")){
-                        Toast toast = Toast.makeText(getActivity(),"Need last name",Toast.LENGTH_LONG);
-                        toast.show();
-                    }
-                    else if(Email.equals("")){
-                        Toast toast = Toast.makeText(getActivity(),"Need email",Toast.LENGTH_LONG);
-                        toast.show();
-                    }
-
-                    else if(Phone.equals("")){
-                        Toast toast = Toast.makeText(getActivity(),"Need phone number",Toast.LENGTH_LONG);
-                        toast.show();
-                    }
-
-                    //Do some sort of alert to tell user to input all fields.
-                }
 
                 else {
 
@@ -121,10 +135,10 @@ public class Registration extends Fragment {
                         userRef.push().setValue(users);
                     //Push into Firebase.
 
-                    etFirstName.setText("");
-                    etLastName.setText("");
-                    etPhoneNumber.setText("");
-                    etEmail.setText("");
+                        etFirstName.setText("");
+                        etLastName.setText("");
+                        etPhoneNumber.setText("");
+                        etEmail.setText("");
 
                     Toast toast = Toast.makeText(getActivity(),"Registration Successful!",Toast.LENGTH_LONG);
                     toast.show();

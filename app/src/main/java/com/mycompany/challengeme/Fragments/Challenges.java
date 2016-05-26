@@ -23,11 +23,12 @@ import static com.mycompany.challengeme.R.layout.fragment_list_item;
  * Created by joshua on 5/21/2016.
  */
 public class Challenges extends ListFragment {
-    TextView tvChallenge;
-    TextView tvUserName;
-    ImageView ivUserImage;
-    Button bAddChallenge;
-   private ArrayList<ChallengeSet> mChallengesArrayList;
+
+    private TextView tvChallenge;
+    private TextView tvUserName;
+    private ImageView ivUserImage;
+    private Button bAddChallenge;
+    private ArrayList<ChallengeSet> mChallengesArrayList;
 
     @Override
     public void onCreate(Bundle savedInstance){
@@ -42,7 +43,6 @@ public class Challenges extends ListFragment {
 
     public View onCreateView(LayoutInflater inflater, ViewGroup parent, Bundle savedInstance){
         View v = inflater.inflate(fragment_list_item , parent , false);
-
 
         tvChallenge = (TextView) v.findViewById(R.id.tvChallenge);
         tvUserName = (TextView) v.findViewById(R.id.tvDescrip);//Actually not the user name
