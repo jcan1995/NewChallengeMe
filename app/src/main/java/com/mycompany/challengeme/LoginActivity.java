@@ -1,9 +1,14 @@
 package com.mycompany.challengeme;
 
+import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 
+import com.firebase.client.Firebase;
 import com.mycompany.challengeme.Fragments.Login;
+
 
 /**
  * Created by joshua on 5/21/2016.
@@ -16,6 +21,8 @@ public class LoginActivity extends FragmentActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+
+        Firebase.setAndroidContext(this);
 
         // Check that the activity is using the layout version with the fragment_container FrameLayout
         if(findViewById(R.id.fContainer) != null) {
@@ -30,6 +37,7 @@ public class LoginActivity extends FragmentActivity {
                     .beginTransaction()
                     .add(R.id.fContainer, loginFrag)
                     .commit();
+            }
         }
 
 
@@ -61,6 +69,3 @@ public class LoginActivity extends FragmentActivity {
     }
 
 
-
-
-}

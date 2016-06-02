@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="match_parent"
-              android:layout_height="match_parent">
+              android:layout_height="match_parent"
+              android:background="#1AAF5D"
+    >
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="#1AAF5D">
 
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Login"
             android:id="@+id/bLogin"
@@ -17,7 +20,7 @@
             android:layout_marginBottom="133dp"
             />
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Register"
             android:id="@+id/bRegister"
@@ -32,9 +35,11 @@
             android:ems="10"
             android:id="@+id/etPhoneNumber"
             android:hint="Email"
+            android:textColorHint="@color/colorWhite"
             android:layout_above="@+id/etPassWord"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="41dp"/>
+            android:layout_marginBottom="41dp"
+            />
 
         <EditText
             android:layout_width="wrap_content"
@@ -43,6 +48,7 @@
             android:ems="10"
             android:id="@+id/etPassWord"
             android:hint="PassWord"
+            android:textColorHint="@color/colorWhite"
             android:layout_above="@+id/bLogin"
             android:layout_alignLeft="@+id/etPhoneNumber"
             android:layout_alignStart="@+id/etPhoneNumber"
@@ -51,7 +57,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/colorPrimary"
+            android:textColor="@color/colorWhite"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Go Beyond Your Potential"
             android:id="@+id/tvChallengeMe"

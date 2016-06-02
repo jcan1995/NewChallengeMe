@@ -21,35 +21,37 @@ import java.util.Map;
  */
 public class Registration extends Fragment {
 
-    private final String FIREBASE_URL = "https://challengeme2.firebaseio.com/";
+    private final String FIREBASE_URL = "https://newchallengeme.firebaseio.com/";
     private Firebase fbRef;
-
     private HashMap<String, User> mUsers;
     private EditText etFirstName;
     private EditText etLastName;
     private EditText etPhoneNumber;
     private EditText etEmail;
-
     private EditText etPassword;
     private EditText etConfirmPass;
-
     private Button bSubmit;
+
+
+
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup parent, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_register, parent, false);
-        Firebase.setAndroidContext(getActivity());
+
         if (fbRef == null) {
             fbRef = new Firebase(FIREBASE_URL);
         }
         final Firebase userRef = fbRef.child("users");
 
-        etPassword = (EditText)v.findViewById(R.id.etPassword);
+        //etPassword = (EditText)v.findViewById(R.id.etPassword);
         etEmail = (EditText)v.findViewById(R.id.etEmail);
         etFirstName = (EditText) v.findViewById(R.id.etFirst);
         etLastName = (EditText) v.findViewById(R.id.etLast);
         etPhoneNumber = (EditText) v.findViewById(R.id.etPhoneNumber);
-        etConfirmPass = (EditText) v.findViewById(R.id.etConfirmPass);
+        //etConfirmPass = (EditText) v.findViewById(R.id.etConfirmPass);
+
 
 
         ///////////////////////////////////////////////
@@ -143,7 +145,8 @@ public class Registration extends Fragment {
                     Toast toast = Toast.makeText(getActivity(),"Registration Successful!",Toast.LENGTH_LONG);
                     toast.show();
 
-                    Login loginFrag = new Login();
+
+                        Login loginFrag = new Login();
                     getFragmentManager()
                             .beginTransaction()
                             .replace(R.id.fContainer, loginFrag)
@@ -158,3 +161,4 @@ public class Registration extends Fragment {
         return v;
     }
 }
+

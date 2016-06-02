@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.firebase.client.Firebase;
 import com.mycompany.challengeme.ChallengeSet;
 import com.mycompany.challengeme.R;
 import com.mycompany.challengeme.Singleton;
@@ -29,6 +30,7 @@ public class Challenges extends ListFragment {
     private ImageView ivUserImage;
     private Button bAddChallenge;
     private ArrayList<ChallengeSet> mChallengesArrayList;
+    private final String FIREBASE_URL = "https://newchallengeme.firebaseio.com/";
 
     @Override
     public void onCreate(Bundle savedInstance){
@@ -47,6 +49,8 @@ public class Challenges extends ListFragment {
         tvChallenge = (TextView) v.findViewById(R.id.tvChallenge);
         tvUserName = (TextView) v.findViewById(R.id.tvDescrip);//Actually not the user name
         ivUserImage = (ImageView) v.findViewById(R.id.ivUserImage);
+        Firebase urlRef = new Firebase(FIREBASE_URL);
+
 
         return v;
     }

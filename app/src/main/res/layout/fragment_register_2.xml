@@ -1,24 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:background="#ffffff"
-              android:orientation="vertical"
-              android:paddingTop="16dp"
-               android:paddingBottom="16dp"
-               android:paddingRight="16dp"
-               android:paddingLeft="16dp"
-               android:weightSum="1"
-
-    >
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical"
+    android:paddingTop="16dp"
+    android:paddingBottom="16dp"
+    android:paddingRight="16dp"
+    android:paddingLeft="16dp">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingTop="16dp"
         android:paddingLeft="16dp"
-        android:text="First Name"
-        android:id="@+id/tvFirst"
+        android:text="Phone Number"
+        android:id="@+id/tvPhoneNumber"
+        android:layout_above="@id/etPhoneNumber"
         />
 
     <EditText
@@ -26,7 +24,9 @@
         android:layout_height="wrap_content"
         android:paddingLeft="16dp"
         android:paddingRight="16dp"
-        android:id="@+id/etFirst"
+        android:inputType="phone"
+        android:id="@+id/etPhoneNumber"
+        android:layout_above="@id/bSubmit"
         />
 
     <TextView
@@ -34,8 +34,8 @@
         android:layout_height="wrap_content"
         android:paddingTop="16dp"
         android:paddingLeft="16dp"
-        android:text="Last Name"
-        android:id="@+id/tvLast"
+        android:text="Email"
+        android:id="@+id/tvEmail"
         />
 
     <EditText
@@ -43,16 +43,15 @@
         android:layout_height="wrap_content"
         android:paddingLeft="16dp"
         android:paddingRight="16dp"
-        android:id="@+id/etLast"
-        android:layout_above="@id/tvLast"
+        android:inputType="textEmailAddress"
+        android:id="@+id/etEmail"
         />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/bNext"
         android:text="Next"
-        />
+        android:id="@+id/bNext1"/>
 
 
-</LinearLayout>
+       </LinearLayout>
